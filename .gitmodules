@@ -1,0 +1,3 @@
+[submodule "src/irsl_docker_pkg_sample"]
+	path = src/irsl_docker_pkg_sample
+	url = https://github.com/IRSL-tut/irsl_docker_pkg_sample.git
