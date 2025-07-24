@@ -7,3 +7,6 @@
 [submodule "src/irsl_instance_segmentation"]
 	path = src/irsl_instance_segmentation
 	url = https://github.com/IRSL-tut/irsl_instance_segmentation.git
+[submodule "src/irsl_www"]
+	path = src/irsl_www
+	url = https://github.com/IRSL-tut/irsl_www.git
