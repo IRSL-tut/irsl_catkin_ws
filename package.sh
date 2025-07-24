@@ -84,9 +84,28 @@ update() {
     done
 }
 
+# Function to run docker image
+run_docker() {
+    pkgdir="${package_dirs_map[$1]}"
+    shift
+    if [ -z "$pkgdir" ]; then
+        echo "Error: Package directory not found for the specified package( $1 )."
+        exit -1
+    fi
+    if [ -n "$pkgdir" ]; then
+        if [ -e "$pkgdir/docker/run_docker.sh" ]; then
+            "$pkgdir/docker/run_docker.sh" "$@"
+        elif [ -e "$pkgdir/docker/run.sh" ]; then
+            "$pkgdir/docker/run.sh" "$@"
+        else
+            echo "Error: No runnable Docker script (run_docker.sh or run.sh) found for package at ${pkgdir}/docker"
+            exit -1
+        fi
+    fi
+}
+
 # Function to print package names each on a new line
 print() {
-    echo "PRINT $#"
     local pkgs=("$@")
 
     if [ "$#" == 0 ]; then
@@ -141,6 +160,9 @@ case $command in
     build-docker)
         build_docker "${pkgs[@]}"
         ;;
+    run)
+        run_docker "${pkgs[@]}"
+        ;;
     update)
         update "${pkgs[@]}"
         ;;
@@ -149,7 +171,7 @@ case $command in
         ;;
     *)
         echo "Invalid command: $command"
-        echo "Valid commands are: enable, disable, build-local, build-docker, update, print"
+        echo "Valid commands are: enable, disable, build-local, build-docker, run, update, print"
         exit 1
         ;;
 esac
