@@ -1,3 +1,9 @@
 [submodule "src/irsl_docker_pkg_sample"]
 	path = src/irsl_docker_pkg_sample
 	url = https://github.com/IRSL-tut/irsl_docker_pkg_sample.git
+[submodule "src/irsl_transcriptions"]
+	path = src/irsl_transcriptions
+	url = https://github.com/IRSL-tut/irsl_transcriptions.git
+[submodule "src/irsl_instance_segmentation"]
+	path = src/irsl_instance_segmentation
+	url = https://github.com/IRSL-tut/irsl_instance_segmentation.git
