@@ -1,6 +1,6 @@
-# irsl_catkin_ws
+# irsl_common_ws
 
-# Uss docker packages { docker or local install(optional) }
+# Use docker packages { docker or local install(optional) }
 
 - irsl_catkin_ws/src 以下にレポジトリ(pkg)を配置
 
@@ -33,3 +33,13 @@ roslaunch <pkg_name> run.launch
 (optional)
 rosrun <pkg_name> run.sh
 ```
+
+# ROSのインストール
+
+## ROS2
+
+ref: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
+
+## ROS-O
+
+ref: https://github.com/ros-o/ros-o
